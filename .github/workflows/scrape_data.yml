@@ -15,7 +15,7 @@ on:
     - cron: '30 7 * * *'   # 1:00 PM IST
     - cron: '0 12 * * *'   # 5:00 PM IST
     - cron: '30 23 * * *'  # 11:00 PM IST  
-    - cron: '46 17 * * *'
+    - cron: '50 17 * * *'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
