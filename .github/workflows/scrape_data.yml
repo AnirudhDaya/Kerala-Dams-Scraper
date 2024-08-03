@@ -15,7 +15,7 @@ on:
     - cron: '30 7 * * *'   # 1:00 PM IST
     - cron: '0 12 * * *'   # 5:00 PM IST
     - cron: '30 23 * * *'  # 11:00 PM IST  
-    - cron: '50 17 * * *'
+
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests beautifulsoup4
     - name: Run scraper
-      run: python scraper.py
+      run: python scrape.py
     - name: Commit and push if changed
       run: |
         git config --local user.email "action@github.com"

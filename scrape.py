@@ -41,7 +41,7 @@ def scrape_dam_data():
 
         header = [th.text.strip().encode('ascii', 'ignore').decode('ascii') for th in rows[0].find_all('td')]
         data = []
-        for row in rows[1:]:  # skip the header row
+        for row in rows[2:]:  # skip the header row
             cols = row.find_all('td')
             cols = [col.text.strip().replace(u'\u00a0', ' ') for col in cols]
             data.append(dict(zip(header, cols)))
@@ -70,7 +70,7 @@ def save_to_json(data, filename):
 if __name__ == "__main__":
     dam_data = scrape_dam_data()
     if dam_data:
-        filename = f"dam_data_{dam_data['date']}.json"
+        filename = f"dam_data.json"
         save_to_json(dam_data, filename)
         print(f"Data saved to {filename}")
     else:
