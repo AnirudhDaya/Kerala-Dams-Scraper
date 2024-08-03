@@ -1,0 +1,41 @@
+name: Scrape Dam Data
+
+on:
+  schedule:
+    - cron: '30 23 * * *'  # 5:00 AM IST
+    - cron: '0 2 * * *'    # 7:30 AM IST
+    - cron: '30 2 * * *'   # 8:00 AM IST
+    - cron: '30 4 * * *'   # 10:00 AM IST
+    - cron: '02 5 * * *'   # 10:00 AM IST
+    - cron: '03 5 * * *'   # 10:00 AM IST
+    - cron: '04 5 * * *'   # 10:00 AM IST
+    - cron: '05 5 * * *'   # 10:00 AM IST
+    - cron: '06 5 * * *'   # 10:00 AM IST
+    - cron: '30 5 * * *'   # 11:00 AM IST
+    - cron: '30 7 * * *'   # 1:00 PM IST
+    - cron: '0 12 * * *'   # 5:00 PM IST
+    - cron: '30 23 * * *'  # 11:00 PM IST  
+    - cron: '46 17 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4
+    - name: Run scraper
+      run: python scraper.py
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add dam_data.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update dam data" && git push)
