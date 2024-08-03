@@ -1,6 +1,6 @@
 # Dam Data Scraper
 
-This project is a Python script designed to scrape data from (KSEB DAM website)[https://dams.kseb.in/?page_id=45] and save the data into a JSON file. The data pertains to dam reservoirs and includes various attributes such as water levels, storage capacities, and inflow/outflow measurements.
+This project is a Python script designed to scrape data from [KSEB DAM website](https://dams.kseb.in/?page_id=45) and save the data into a JSON file. The data pertains to dam reservoirs and includes various attributes such as water levels, storage capacities, and inflow/outflow measurements.
 
 ## Prerequisites
 
