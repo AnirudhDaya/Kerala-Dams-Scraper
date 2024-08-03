@@ -74,6 +74,8 @@ The script will output a JSON file with the following structure:
   ]
 }
 ```
+Data Availability
+The data scraped by this project is available in a JSON file hosted on GitHub. You can access it [here](https://raw.githubusercontent.com/AnirudhDaya/Kerala-Dams-Scraper/main/dam_data.json).
 
 ## License
 
