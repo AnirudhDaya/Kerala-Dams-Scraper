@@ -1,4 +1,4 @@
 {
   "date": "28.10.2024",
-  "error": "HTTPSConnectionPool(host='dams.kseb.in', port=443): Max retries exceeded with url: /?page_id=45 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f57310a7a40>: Failed to resolve 'dams.kseb.in' ([Errno -3] Temporary failure in name resolution)\"))"
+  "error": "HTTPSConnectionPool(host='dams.kseb.in', port=443): Max retries exceeded with url: /?page_id=45 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x7f3da4066930>: Failed to resolve 'dams.kseb.in' ([Errno -3] Temporary failure in name resolution)\"))"
 }
